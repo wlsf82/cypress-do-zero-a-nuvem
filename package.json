@@ -4,7 +4,8 @@
   "description": "Curso 'Cypress, do Zero à Nuvem' da Escola Talking About Testing.",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
