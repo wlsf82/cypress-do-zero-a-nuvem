@@ -45,8 +45,6 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#phone')
       .type('abcde')
       .should('have.value', '')
-      // ou
-      .should('be.empty')
   })
 
   it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', () => {
@@ -76,7 +74,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .type('Lima e Silva Filho')
       .should('have.value', 'Lima e Silva Filho')
       .clear()
-      .should('be.empty')
+      .should('have.value', '')
     cy.get('#email')
       .type('walmyr@talkingabouttesting.com')
       .should('have.value', 'walmyr@talkingabouttesting.com')
@@ -86,7 +84,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .type('12345678989')
       .should('have.value', '12345678989')
       .clear()
-      .should('be.empty')
+      .should('have.value', '')
   })
 
   it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
