@@ -27,6 +27,6 @@
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme",
   "devDependencies": {
-    "cypress": "^13.11.0"
+    "cypress": "^13.12.0"
   }
 }
