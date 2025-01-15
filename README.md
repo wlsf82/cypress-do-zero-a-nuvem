@@ -1,28 +1,37 @@
-# 🌲 Cypress, do Zero à Nuvem ☁️
+# 🌲 Cypress, from Zero to the Cloud ☁️
 
-👋 Seja bem-vindo(a)!
+Sample project for the "Cypress, from Zero to the Cloud" course of the Talking About Testing online school.
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+## Pre-requirements
 
-## O que você vai aprender?
+It is required to have git, Node.js and npm installed to clone and run this project.
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+> I've used versions `2.42.1`, `v20.13.1` and `10.8.1` of git, Node.js and npm, respectively. I suggest you use the same or later LTS versions.
 
-## Vamos começar?
+## Installation
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+Run `npm install` (or `npm i` for the short version) to install the dev dependencies.
+
+## Tests
+
+In this project, you can run the tests on a desktop or mobile viewport.
+
+### Desktop
+
+Run `npm test` (or `npm t` for the short version) to run the test in headless mode on a desktop viewport.
+
+Or, run `npm run cy:open` to open the Cypress App on a desktop viewport.
+
+### Mobile
+
+Run `npm run test:mobile` to run the test in headless mode on a mobile viewport.
+
+Or, run `npm run cy:open:mobile` to open the Cypress App on a mobile viewport.
+
+## Support this project
+
+If you want to support this project, leave a ⭐.
 
 ___
 
-Este é um curso da **Escola Talking About Testing**.
+This project was created with 💚 by [Walmyr](https://walmyr.dev).
