@@ -1,28 +1,28 @@
-# 🌲 Cypress, do Zero à Nuvem ☁️
+# cypress, from zero to the cloud
 
-👋 Seja bem-vindo(a)!
+Sample project for "cypress, from zero to the cloud" course of talking about testing school
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+## Pre-requirements
 
-## O que você vai aprender?
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/) (v20.18.0)
+- npm (v10.8.2)
+- [Microsoft Edge](https://www.microsoft.com/pt-br/edge/download?form=MA13FJ)
+- [Visual Studio Code](https://code.visualstudio.com/) (v1.95.0)
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+> Suggested to use Node.js `v18.15.0` and npm `9.5.0` or later versions
 
-## Vamos começar?
+## Installation
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+Run:
 
-___
+- `npm install` (or `npm i` for the short version) to install the dev dependencies.
 
-Este é um curso da **Escola Talking About Testing**.
+## Tests
+
+Run:
+
+- `npm cy:open` to open cypress in interactive mode on a desktop viewport
+- `npm cy:open:mobile` to open cypress in interactive mode on a mobile viewport
+- `npm test` to run cypress in headless mode on a desktop viewport
+- `npm test:headless:mobile` to run cypress in headless mode on a mobile viewport
