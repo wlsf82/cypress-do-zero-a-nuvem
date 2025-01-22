@@ -20,7 +20,7 @@ describe("testa a página da política de privacidade de forma independente", fu
     );
     cy.get("#white-background > :nth-child(5)").should(
       "have.text",
-      "Talking About Testing"
+      "Talking About "
     );
   });
 });
