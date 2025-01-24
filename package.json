@@ -5,7 +5,8 @@
   "main": "src/index.html",
   "scripts": {
     "cy:open": "cypress open",
-    "test": "cypress run"
+    "test": "cypress run",
+    "test:cloud": "cypress run --record"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,5 @@
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme",
   "devDependencies": {
     "cypress": "^13.12.0"
-  },
-  "test:cloud": "cypress run --record"
+  }
 }
