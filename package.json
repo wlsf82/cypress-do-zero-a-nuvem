@@ -25,5 +25,6 @@
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme",
   "devDependencies": {
     "cypress": "^13.12.0"
-  }
+  },
+  "test:cloud": "cypress run --record"
 }
