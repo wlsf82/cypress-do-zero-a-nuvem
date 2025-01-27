@@ -207,7 +207,7 @@ describe("Central de Atendimento ao Cliente TAT", () => {
     cy.findTheCat();
   });
 
-  it.only("Valida o fluxo inteiro", function () {
+  it.only("Preenche o formulário inteiro e envia com sucesso", function () {
     cy.visit("./src/index.html");
     cy.get("#firstName").should("be.visible").type("Angelina");
     cy.get("#lastName").should("be.visible").type("Jolie");
