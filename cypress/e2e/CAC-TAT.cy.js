@@ -206,4 +206,18 @@ describe("Central de Atendimento ao Cliente TAT", () => {
   it("Encontre o gato", function () {
     cy.findTheCat();
   });
+
+  it.only("Valida o fluxo inteiro", function () {
+    cy.visit("./src/index.html");
+    cy.get("#firstName").should("be.visible").type("Angelina");
+    cy.get("#lastName").should("be.visible").type("Jolie");
+    cy.get("#email").should("be.visible").type("hahaha@gmail.com");
+    cy.get("#phone").should("be.visible").type("123456789");
+    cy.get("#product").should("be.visible").select(3);
+    cy.get(":nth-child(3) > input").should("be.visible").check();
+    cy.get("#phone-checkbox").should("be.visible").check();
+    cy.get("#open-text-area").should("be.visible").type("Nenhum");
+    cy.get(".button").should("be.visible").click();
+    cy.get(".success").should("be.visible");
+  });
 });

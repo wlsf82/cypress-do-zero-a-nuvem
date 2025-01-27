@@ -4,7 +4,9 @@ module.exports = defineConfig({
   projectId: "g3c5t8",
   viewportHeight: 880,
   viewportWidth: 1280,
-  e2e: {},
+  e2e: {
+    experimentalStudio: true,
+  },
   video: true,
   scripts: {
     "cy:open": "cypress open",
