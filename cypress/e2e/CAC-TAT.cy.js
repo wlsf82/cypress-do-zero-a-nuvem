@@ -2,6 +2,7 @@ describe("Central de Atendimento ao Cliente TAT", () => {
   beforeEach(function () {
     cy.clock();
     cy.visit("./src/index.html");
+    cy.wait(1000);
   });
 
   it("Verifica o título da aplicação", function () {
@@ -207,7 +208,7 @@ describe("Central de Atendimento ao Cliente TAT", () => {
     cy.findTheCat();
   });
 
-  it.only("Preenche o formulário inteiro e envia com sucesso", function () {
+  it("Preenche o formulário inteiro e envia com sucesso", function () {
     cy.visit("./src/index.html");
     cy.get("#firstName").should("be.visible").type("Angelina");
     cy.get("#lastName").should("be.visible").type("Jolie");
