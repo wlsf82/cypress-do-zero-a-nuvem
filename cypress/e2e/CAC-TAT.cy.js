@@ -3,11 +3,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.visit('./src/index.html')
   })
 
-  it('verifica o título da aplicação', () => {
+  it('verifying the app title', () => {
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
   })
 
-  it('preenche os campos obrigatórios e envia o formulário', () => {
+  it('fill the Core/Mandatory infos', () => {
     const longText = Cypress._.repeat('adcdfghijkabcabc' ,10)
 
     cy.get('#firstName').type('John')
@@ -21,7 +21,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('.success').should('be.visible')
   })
   
-  it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', () => {
+  it('displays an error message when submitting the form with an email with invalid formatting', () => {
     cy.get('#firstName').type('John')
     cy.get('#lastName').type('Doe')
     cy.get('#email').type('johndoe@gmail,com')
@@ -32,14 +32,14 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('.error').should('be.visible')
   })
 
-  it('Campo telefone continua vazio quando preenchido com um valor não-numérico', () =>{ 
+  it('phone camps stays empty when the inserted data is a not-number value', () =>{ 
     cy.get('#phone')
       .type('abcde')
       .should('have.value', '')
 
   })
 
-  it('exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', () => {
+  it('displays an error when the phone camps turn into core/mandatory and do not filled', () => {
     cy.get('#firstName').type('John')
     cy.get('#lastName').type('Doe')
     cy.get('#email').type('johndoe@gmail,com')
@@ -51,7 +51,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('.error').should('be.visible')
   })
 
-  it('preenche e limpa os campos nome, sobrenome, email e telefone', () => {
+  it('fill and clear the name, last name, email and phone', () => {
     cy.get('#firstName')
       .type('John')
         .should('have.value', 'John') 
@@ -73,45 +73,45 @@ describe('Central de Atendimento ao Cliente TAT', () => {
             .clear()
             .should('have.value', '')
   })
-  it('exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
+  it('display error message when submitting the form without filling in the required fields', () => {
     cy.get('.button[type="submit"]').click()
   })
   
-  it('envia o formuário com sucesso usando um comando customizado', () => {
+  it('try successfully submits the form using a custom command', () => {
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
   })
-it('seleciona um produto (YouTube) por seu texto', () => {
+it('select a product by its text', () => {
   cy.get('#product')
     .select('youtube')
     .should('have.value', 'youtube')
 })
 
-it('seleciona um produto (Mentoria) por seu valor (value)', () => {
+it('select a product by its value (value)', () => {
   cy.get('#product')
     .select('mentoria')
     .should('have.value', 'mentoria')
 })
 
-it('seleciona um produto (Blog) por seu índice', () => {
+it('select a product by its index', () => {
   cy.get('#product')
     .select(1)
     .should('have.value', 'blog')
 })
 
-it('marca o tipo de atendimento "Feedback"', () => {
+it('mark the type of service "Feedback"', () => {
   cy.get('input[type="radio"][value="feedback"]')
     .check()
     .should('be.checked')
 })
 
-it('marca cada tipo de atendimento', () => {
+it('mark each type of service', () => {
   cy.get('input[type="radio"]')
 
 })
 
-it('marca ambos checkboxes, depois desmarca o último', () => {
+it('check both checkboxes, then uncheck the last one', () => {
 
   cy.get('#email-checkbox').check()
   cy.get('#phone-checkbox').check()
@@ -121,14 +121,14 @@ it('marca ambos checkboxes, depois desmarca o último', () => {
   .should('not.checked')
 })
 
-it('seleciona um arquivo da pasta fixtures', () => {
+it('select a file from the fixture folders', () => {
   cy.get('#file-upload') 
     .selectFile('cypress/fixtures/example.json')
     .should( input => {
       expect(input[0].files[0].name).to.equal('example.json')
     })
 })
-it('seleciona um arquivo simulando um drag-and-drop', () => {
+it('select a file by simulating drag-and-drop', () => {
   cy.get('#file-upload') 
   .selectFile('cypress/fixtures/example.json', { action: 'drag-drop' })
   .should( input => {
@@ -136,7 +136,7 @@ it('seleciona um arquivo simulando um drag-and-drop', () => {
   })
 
 })
-it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => { 
+it('selects a file using a fixture that has been given an alias', () => { 
   cy.fixture('example.json').as('sampleFile')
    cy.get('#file-upload') 
   .selectFile('@sampleFile')
@@ -146,13 +146,13 @@ it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', 
 
 })
 
-it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => { 
+it('Verifies that the privacy policy opens in another tab without the need for a click', () => { 
   cy.contains('a', 'Política de Privacidade')
     .should('have.attr', 'href', 'privacy.html')
     .and('have.attr', 'target', '_blank')
 }) 
 
-it.only('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+it('access the privacy policy page by removing the target and then clicking the link', () => {
   cy.contains('a', 'Política de Privacidade')
     .invoke('removeAttr', 'target')
     .click()
