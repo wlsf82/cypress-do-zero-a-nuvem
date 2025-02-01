@@ -12,8 +12,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#firstName').type("Tibério")
     cy.get('#lastName').type("Neto")
     cy.get('#email').type("athanetto@gmail.com")
-    cy.get('#open-text-area').type(longText, {delay:0})
-    cy.contains("button","Enviar").click()
+    cy.get('#open-text-area').type(longText, { delay: 0 })
+    cy.contains("button", "Enviar").click()
 
     cy.get(".success").should("be.visible")
   })
@@ -23,14 +23,14 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#lastName').type("Neto")
     cy.get('#email').type("athanetto@gmail,com")
     cy.get('#open-text-area').type("teste")
-    cy.contains("button","Enviar").click()
+    cy.contains("button", "Enviar").click()
 
     cy.get(".error").should("be.visible")
   })
   it("Campo telefone continua vazio quando preenchido com um valor não-numérico", () => {
     cy.get('#phone')
-    .type("abcde")
-    .should("have.value", "")
+      .type("abcde")
+      .should("have.value", "")
   })
   it("exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário", () => {
     cy.get('#firstName').type("Tibério")
@@ -38,7 +38,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#email').type("athanetto@gmail.com")
     cy.get('#open-text-area').type("teste")
     cy.get('#phone-checkbox').click()
-    cy.contains("button","Enviar").click()
+    cy.contains("button", "Enviar").click()
 
     cy.get(".error").should("be.visible")
   })
@@ -73,6 +73,21 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
+  })
+  it("seleciona um produto (YouTube) por seu texto", () => {
+    cy.get('#product')
+      .select("YouTube")
+      .should("have.value", "youtube")
+  })
+  it("seleciona um produto (Mentoria) por seu valor (value)", () => {
+    cy.get('#product')
+      .select("mentoria")
+      .should('have.value', 'mentoria')
+  })
+  it("seleciona um produto (Blog) por seu índice", () => {
+    cy.get('#product')
+      .select(1)
+      .should('have.value', 'blog')
   })
 
 })
