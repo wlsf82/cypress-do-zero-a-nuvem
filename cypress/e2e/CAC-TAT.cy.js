@@ -13,7 +13,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#lastName').type("Neto")
     cy.get('#email').type("athanetto@gmail.com")
     cy.get('#open-text-area').type(longText, {delay:0})
-    cy.get('button[type="submit"]').click()
+    cy.contains("button","Enviar").click()
 
     cy.get(".success").should("be.visible")
   })
@@ -23,7 +23,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#lastName').type("Neto")
     cy.get('#email').type("athanetto@gmail,com")
     cy.get('#open-text-area').type("teste")
-    cy.get('button[type="submit"]').click()
+    cy.contains("button","Enviar").click()
 
     cy.get(".error").should("be.visible")
   })
@@ -38,7 +38,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#email').type("athanetto@gmail.com")
     cy.get('#open-text-area').type("teste")
     cy.get('#phone-checkbox').click()
-    cy.get('button[type="submit"]').click()
+    cy.contains("button","Enviar").click()
 
     cy.get(".error").should("be.visible")
   })
@@ -68,4 +68,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('button[type="submit"]').click()
     cy.get(".error").should("be.visible")
   })
+  it("envia o formuário com sucesso usando um comando customizado", () => {
+
+    cy.fillMandatoryFieldsAndSubmit()
+
+    cy.get('.success').should('be.visible')
+  })
+
 })
