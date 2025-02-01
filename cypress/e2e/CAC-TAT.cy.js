@@ -7,7 +7,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.title().should("be.equal", "Central de Atendimento ao Cliente TAT")
   })
 
-  it("preenche os campos obrigatórios e envia o formulário", () => {
+  it("Preenche os campos obrigatórios e envia o formulário", () => {
     const longText = Cypress._.repeat("Helena papai te ama, ", 10)
     cy.get('#firstName').type("Tibério")
     cy.get('#lastName').type("Neto")
@@ -18,7 +18,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get(".success").should("be.visible")
   })
 
-  it("exibe mensagem de erro ao submeter o formulário com um email com formatação inválida", () => {
+  it("Exibe mensagem de erro ao submeter o formulário com um email com formatação inválida", () => {
     cy.get('#firstName').type("Tibério")
     cy.get('#lastName').type("Neto")
     cy.get('#email').type("athanetto@gmail,com")
@@ -32,7 +32,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .type("abcde")
       .should("have.value", "")
   })
-  it("exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário", () => {
+  it("Exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário", () => {
     cy.get('#firstName').type("Tibério")
     cy.get('#lastName').type("Neto")
     cy.get('#email').type("athanetto@gmail.com")
@@ -64,30 +64,35 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .clear()
       .should("have.value", "")
   })
-  it("exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios", () => {
+  it("Exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios", () => {
     cy.get('button[type="submit"]').click()
     cy.get(".error").should("be.visible")
   })
-  it("envia o formuário com sucesso usando um comando customizado", () => {
+  it("Envia o formuário com sucesso usando um comando customizado", () => {
 
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
   })
-  it("seleciona um produto (YouTube) por seu texto", () => {
+  it("Seleciona um produto (YouTube) por seu texto", () => {
     cy.get('#product')
       .select("YouTube")
       .should("have.value", "youtube")
   })
-  it("seleciona um produto (Mentoria) por seu valor (value)", () => {
+  it("Seleciona um produto (Mentoria) por seu valor (value)", () => {
     cy.get('#product')
       .select("mentoria")
       .should('have.value', 'mentoria')
   })
-  it("seleciona um produto (Blog) por seu índice", () => {
+  it("Seleciona um produto (Blog) por seu índice", () => {
     cy.get('#product')
       .select(1)
       .should('have.value', 'blog')
+  })
+  it.only('Marca o tipo de atendimento "Feedback" ', () => {
+    cy.get('input[type="radio"][value="feedback"]')
+    .check()
+    .should("be.checked")
   })
 
 })
