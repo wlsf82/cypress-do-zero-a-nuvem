@@ -20,6 +20,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get("[id='phone']input[type='number']").type("123456789")
   })
 
+  
   })
   it("envia o formulário", () => cy.get("button[type=submit][class=button]").click())
   it("Abre a aba na guia atual ao clicar no link do privacy", () => {

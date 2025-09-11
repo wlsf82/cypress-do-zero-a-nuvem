@@ -1,6 +1,9 @@
 name: End-to-End Tests
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   cypress-run:
@@ -13,3 +16,4 @@ jobs:
         with:
           browser: chrome
           working-directory: cypress
+
