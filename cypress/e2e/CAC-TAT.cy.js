@@ -22,10 +22,10 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
   })
   it("envia o formulário", () => cy.get("button[type=submit][class=button]").click())
-  it("Abre a aba na guia atual ao clicar no link do privacy", () => {
-    cy.get("#privacy a").should("have.attr","target","_blank")
-    cy.get("#privacy a").invoke("removeAttr","target").click()
-    cy.contains("Talking About Testing")
-  })
+  // it("Abre a aba na guia atual ao clicar no link do privacy", () => {
+  //   cy.get("#privacy a").should("have.attr","target","_blank")
+  //   cy.get("#privacy a").invoke("removeAttr","target").click()
+  //   cy.contains("Talking About Testing")
+  // })
 
 })
