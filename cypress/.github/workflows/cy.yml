@@ -1,9 +1,6 @@
 name: End-to-End Tests
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   cypress-run:
@@ -13,7 +10,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          working-directory: cypress
+
 
