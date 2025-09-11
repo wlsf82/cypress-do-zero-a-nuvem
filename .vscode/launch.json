@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "Executar Script: cy:open",
+            "request": "launch",
+            "command": "npm run cy:open",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "Executar Script: cy:open",
+            "request": "launch",
+            "command": "npm run cy:open",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "Executar Script: cy:open",
+            "request": "launch",
+            "command": "npm run cy:open",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
