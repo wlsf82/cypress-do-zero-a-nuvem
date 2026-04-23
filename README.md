@@ -1,4 +1,4 @@
-# 🚀 Testes Automatizados com Cypress
+# 🚀 Testes Automatizados com Cypress HAHA
 
 Este projeto contém testes automatizados de ponta a ponta (E2E) utilizando o [Cypress](https://www.cypress.io/), criados como parte do curso **“Cypress, do Zero à Nuvem”**.
 
