@@ -1,28 +1,54 @@
-# 🌲 Cypress, do Zero à Nuvem ☁️
+# 🚀 Testes Automatizados com Cypress HAHA
 
-👋 Seja bem-vindo(a)!
+Este projeto contém testes automatizados de ponta a ponta (E2E) utilizando o [Cypress](https://www.cypress.io/), criados como parte do curso **“Cypress, do Zero à Nuvem”**.
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+---
 
-## O que você vai aprender?
+## 🧩 Pré-requisitos
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+Antes de começar, verifique se você tem as seguintes ferramentas instaladas em sua máquina:
 
-## Vamos começar?
+- [Git](https://git-scm.com/) (versão recomendada: `2.42.1` ou superior)  
+- [Node.js](https://nodejs.org/) (versão recomendada: `v20.13.1` ou superior)  
+- [npm](https://www.npmjs.com/) (versão recomendada: `10.8.1` ou superior)
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+> 💡 Sugestão: use sempre as versões LTS (Long Term Support) mais recentes.
 
-___
+---
 
-Este é um curso da **Escola Talking About Testing**.
+## 📦 Instalação do projeto
+
+Clone este repositório e instale as dependências do projeto.
+
+```bash
+git clone https://github.com/seu-usuario/cypress-do-zero-a-nuvem.git
+cd cypress-do-zero-a-nuvem
+npm install
+
+🧪 Testando passo a passo
+
+Siga as etapas abaixo para rodar seus testes com sucesso:
+
+Instale as dependências
+
+npm install
+
+
+Verifique se o Cypress foi instalado corretamente
+
+npx cypress verify
+
+
+Abra o Cypress para verificar os testes disponíveis
+
+npm run cy:open
+
+
+Execute todos os testes de uma vez (modo headless)
+
+npm test
+
+
+Execute os testes simulando um dispositivo mobile
+
+npm run test:mobile
